@@ -1,0 +1,1764 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bienvenido/a al Equipo — RK Palanca Fontestad</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --naranja: #cf731b;
+    --naranja-light: #e8914a;
+    --negro: #0a0a0a;
+    --blanco: #ffffff;
+    --gris-claro: #f7f6f4;
+    --gris-texto: #4a4a4a;
+    --gris-medio: #888;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Montserrat', sans-serif;
+    background: var(--blanco);
+    color: var(--negro);
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  /* ── PORTADA ── */
+  .portada {
+    background: var(--negro);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    page-break-after: always;
+  }
+
+  .portada::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 30% 70%, rgba(207,115,27,0.15) 0%, transparent 60%),
+                radial-gradient(ellipse at 80% 20%, rgba(207,115,27,0.08) 0%, transparent 50%);
+  }
+
+  .portada-logo {
+    position: relative;
+    margin-bottom: 48px;
+  }
+
+  .logo-rk {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 8px;
+  }
+
+  .logo-isotipo {
+    width: 60px;
+    height: 60px;
+    background: var(--naranja);
+    clip-path: polygon(0 0, 55% 0, 100% 50%, 55% 100%, 0 100%, 0 60%, 40% 50%, 0 40%);
+    flex-shrink: 0;
+  }
+
+  .logo-text-block {
+    text-align: left;
+  }
+
+  .logo-palanca {
+    font-size: 28px;
+    font-weight: 900;
+    color: var(--blanco);
+    letter-spacing: 3px;
+    line-height: 1;
+  }
+
+  .logo-fontestad {
+    font-size: 28px;
+    font-weight: 900;
+    color: var(--naranja);
+    letter-spacing: 3px;
+    line-height: 1;
+  }
+
+  .logo-by {
+    font-size: 9px;
+    font-weight: 400;
+    color: var(--gris-medio);
+    letter-spacing: 2px;
+    margin-top: 4px;
+  }
+
+  .portada-titulo {
+    position: relative;
+    max-width: 700px;
+    padding: 0 32px;
+  }
+
+  .portada-bienvenida {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 5px;
+    color: var(--naranja);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+
+  .portada-h1 {
+    font-size: 52px;
+    font-weight: 900;
+    color: var(--blanco);
+    line-height: 1.1;
+    margin-bottom: 24px;
+  }
+
+  .portada-h1 span {
+    color: var(--naranja);
+  }
+
+  .portada-desc {
+    font-size: 16px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.6);
+    max-width: 480px;
+    margin: 0 auto 40px;
+  }
+
+  .portada-stats {
+    display: flex;
+    gap: 48px;
+    justify-content: center;
+    position: relative;
+    margin-top: 16px;
+  }
+
+  .stat {
+    text-align: center;
+  }
+
+  .stat-num {
+    font-size: 32px;
+    font-weight: 900;
+    color: var(--naranja);
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    color: rgba(255,255,255,0.4);
+    text-transform: uppercase;
+    margin-top: 4px;
+  }
+
+  .portada-footer {
+    position: absolute;
+    bottom: 32px;
+    font-size: 11px;
+    color: rgba(255,255,255,0.2);
+    letter-spacing: 2px;
+  }
+
+  /* ── SECCIONES GENÉRICAS ── */
+  .seccion {
+    padding: 80px 64px;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  .seccion-full {
+    padding: 80px 64px;
+  }
+
+  .tag {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--naranja);
+    margin-bottom: 16px;
+  }
+
+  .titulo-seccion {
+    font-size: 36px;
+    font-weight: 900;
+    color: var(--negro);
+    line-height: 1.15;
+    margin-bottom: 32px;
+  }
+
+  .titulo-seccion em {
+    color: var(--naranja);
+    font-style: normal;
+  }
+
+  .divider {
+    width: 48px;
+    height: 4px;
+    background: var(--naranja);
+    margin-bottom: 32px;
+  }
+
+  /* ── SECCIÓN PROPÓSITO ── */
+  .proposito {
+    background: var(--negro);
+    color: var(--blanco);
+  }
+
+  .proposito .seccion {
+    max-width: 960px;
+  }
+
+  .proposito .titulo-seccion {
+    color: var(--blanco);
+    font-size: 40px;
+  }
+
+  .proposito-quote {
+    font-size: 22px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.85);
+    line-height: 1.6;
+    border-left: 3px solid var(--naranja);
+    padding-left: 28px;
+    margin: 32px 0;
+    font-style: italic;
+  }
+
+  .valores-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2px;
+    margin-top: 48px;
+  }
+
+  .valor-card {
+    background: rgba(255,255,255,0.04);
+    padding: 28px 24px;
+    border-top: 3px solid transparent;
+    transition: border-color 0.3s;
+  }
+
+  .valor-card:nth-child(1) { border-color: var(--naranja); }
+  .valor-card:nth-child(2) { border-color: rgba(207,115,27,0.6); }
+  .valor-card:nth-child(3) { border-color: rgba(207,115,27,0.4); }
+  .valor-card:nth-child(4) { border-color: rgba(207,115,27,0.2); }
+
+  .valor-num {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: var(--naranja);
+    margin-bottom: 12px;
+  }
+
+  .valor-titulo {
+    font-size: 15px;
+    font-weight: 800;
+    color: var(--blanco);
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+  }
+
+  .valor-desc {
+    font-size: 12px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.6;
+  }
+
+  /* ── BIENVENIDA KIT ── */
+  .kit-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    margin-top: 48px;
+  }
+
+  .kit-item {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    padding: 28px;
+    background: var(--gris-claro);
+    border-left: 4px solid var(--naranja);
+  }
+
+  .kit-icon {
+    font-size: 28px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .kit-titulo {
+    font-size: 14px;
+    font-weight: 800;
+    color: var(--negro);
+    margin-bottom: 6px;
+    letter-spacing: 0.5px;
+  }
+
+  .kit-desc {
+    font-size: 12px;
+    color: var(--gris-texto);
+    line-height: 1.6;
+  }
+
+  /* ── PLAN 3 MESES ── */
+  .plan-fondo {
+    background: var(--gris-claro);
+  }
+
+  .meses-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    margin-top: 48px;
+  }
+
+  .mes-card {
+    padding: 40px 32px;
+    position: relative;
+    border-right: 1px solid rgba(0,0,0,0.08);
+  }
+
+  .mes-card:last-child { border-right: none; }
+
+  .mes-num {
+    font-size: 72px;
+    font-weight: 900;
+    color: rgba(0,0,0,0.05);
+    position: absolute;
+    top: 16px;
+    right: 20px;
+    line-height: 1;
+  }
+
+  .mes-badge {
+    display: inline-block;
+    background: var(--naranja);
+    color: var(--blanco);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    padding: 4px 12px;
+    margin-bottom: 16px;
+  }
+
+  .mes-titulo {
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--negro);
+    margin-bottom: 8px;
+  }
+
+  .mes-objetivo {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--naranja);
+    margin-bottom: 20px;
+    font-style: italic;
+  }
+
+  .mes-lista {
+    list-style: none;
+    margin-bottom: 24px;
+  }
+
+  .mes-lista li {
+    font-size: 12px;
+    color: var(--gris-texto);
+    padding: 6px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .mes-lista li::before {
+    content: '→';
+    color: var(--naranja);
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  .kpi-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .kpi {
+    background: var(--blanco);
+    padding: 10px 12px;
+  }
+
+  .kpi-val {
+    font-size: 18px;
+    font-weight: 900;
+    color: var(--naranja);
+    line-height: 1;
+  }
+
+  .kpi-label {
+    font-size: 10px;
+    font-weight: 500;
+    color: var(--gris-medio);
+    margin-top: 2px;
+  }
+
+  /* ── ORGANIGRAMA ── */
+  .org-wrapper {
+    overflow-x: auto;
+    margin-top: 48px;
+  }
+
+  .org-container {
+    min-width: 700px;
+    font-size: 12px;
+  }
+
+  .org-level {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 0;
+    position: relative;
+  }
+
+  .org-connector-v {
+    display: flex;
+    justify-content: center;
+    height: 24px;
+  }
+
+  .org-connector-v::before {
+    content: '';
+    width: 2px;
+    height: 100%;
+    background: var(--naranja);
+    opacity: 0.4;
+  }
+
+  .org-connector-h {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    height: 24px;
+    margin: 0 40px;
+  }
+
+  .org-node {
+    background: var(--negro);
+    color: var(--blanco);
+    padding: 10px 16px;
+    text-align: center;
+    min-width: 120px;
+    max-width: 160px;
+  }
+
+  .org-node.highlight {
+    background: var(--naranja);
+    color: var(--blanco);
+  }
+
+  .org-node.secondary {
+    background: #1a1a1a;
+    border-left: 3px solid var(--naranja);
+  }
+
+  .org-node.light {
+    background: var(--gris-claro);
+    color: var(--negro);
+    border: 1px solid rgba(0,0,0,0.1);
+  }
+
+  .org-node.you {
+    background: var(--naranja);
+    color: var(--blanco);
+    border: 3px solid var(--negro);
+    position: relative;
+  }
+
+  .org-node.you::after {
+    content: 'TÚ';
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background: var(--negro);
+    color: var(--naranja);
+    font-size: 9px;
+    font-weight: 900;
+    padding: 2px 5px;
+    letter-spacing: 1px;
+  }
+
+  .org-role {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    opacity: 0.7;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+
+  .org-name {
+    font-size: 13px;
+    font-weight: 700;
+  }
+
+  /* ── PROCESO VENTA ── */
+  .proceso-fondo {
+    background: var(--negro);
+  }
+
+  .proceso-fondo .titulo-seccion {
+    color: var(--blanco);
+  }
+
+  .fases-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0;
+    margin-top: 48px;
+  }
+
+  .fase {
+    padding: 32px 20px;
+    border-right: 1px solid rgba(255,255,255,0.06);
+    position: relative;
+  }
+
+  .fase:last-child { border-right: none; }
+
+  .fase-num {
+    font-size: 48px;
+    font-weight: 900;
+    color: rgba(255,255,255,0.04);
+    line-height: 1;
+    margin-bottom: 12px;
+  }
+
+  .fase-icon {
+    font-size: 24px;
+    margin-bottom: 12px;
+  }
+
+  .fase-titulo {
+    font-size: 13px;
+    font-weight: 800;
+    color: var(--naranja);
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+  }
+
+  .fase-items {
+    list-style: none;
+  }
+
+  .fase-items li {
+    font-size: 11px;
+    color: rgba(255,255,255,0.55);
+    padding: 4px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    line-height: 1.4;
+  }
+
+  .fase-tu {
+    margin-top: 16px;
+    background: rgba(207,115,27,0.15);
+    border-left: 2px solid var(--naranja);
+    padding: 8px 10px;
+  }
+
+  .fase-tu-label {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--naranja);
+    margin-bottom: 4px;
+  }
+
+  .fase-tu-text {
+    font-size: 11px;
+    color: rgba(255,255,255,0.7);
+  }
+
+  /* ── GAMIFICACIÓN ── */
+  .niveles-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 48px;
+  }
+
+  .nivel {
+    display: grid;
+    grid-template-columns: 200px 1fr auto;
+    gap: 0;
+    align-items: stretch;
+  }
+
+  .nivel-badge {
+    padding: 24px 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .nivel-0 .nivel-badge { background: #1a1a1a; }
+  .nivel-1 .nivel-badge { background: #1a1a1a; }
+  .nivel-2 .nivel-badge { background: rgba(207,115,27,0.15); border: 1px solid rgba(207,115,27,0.3); }
+  .nivel-3 .nivel-badge { background: rgba(207,115,27,0.25); border: 1px solid rgba(207,115,27,0.5); }
+  .nivel-4 .nivel-badge { background: var(--naranja); }
+
+  .nivel-label {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: var(--naranja);
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+
+  .nivel-4 .nivel-label { color: var(--negro); }
+
+  .nivel-nombre {
+    font-size: 15px;
+    font-weight: 900;
+    color: var(--blanco);
+  }
+
+  .nivel-4 .nivel-nombre { color: var(--negro); }
+
+  .nivel-contenido {
+    background: var(--gris-claro);
+    padding: 24px 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .nivel-mision {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--negro);
+    margin-bottom: 8px;
+  }
+
+  .nivel-desc {
+    font-size: 12px;
+    color: var(--gris-texto);
+    line-height: 1.5;
+  }
+
+  .nivel-gemas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 10px;
+  }
+
+  .gema {
+    font-size: 10px;
+    font-weight: 600;
+    padding: 3px 10px;
+    background: rgba(0,0,0,0.07);
+    color: var(--gris-texto);
+  }
+
+  .nivel-reward {
+    background: var(--negro);
+    padding: 24px 28px;
+    min-width: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .reward-label {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--naranja);
+    margin-bottom: 6px;
+  }
+
+  .reward-text {
+    font-size: 12px;
+    color: rgba(255,255,255,0.7);
+    line-height: 1.5;
+  }
+
+  /* ── PROTOCOLO CX ── */
+  .cx-fondo {
+    background: var(--gris-claro);
+  }
+
+  .fases-cx {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    margin-top: 48px;
+  }
+
+  .cx-card {
+    background: var(--blanco);
+    padding: 32px;
+    position: relative;
+    border-top: 4px solid var(--naranja);
+  }
+
+  .cx-card-num {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    font-size: 48px;
+    font-weight: 900;
+    color: rgba(0,0,0,0.04);
+    line-height: 1;
+  }
+
+  .cx-card-titulo {
+    font-size: 16px;
+    font-weight: 800;
+    color: var(--negro);
+    margin-bottom: 8px;
+  }
+
+  .cx-card-sub {
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--naranja);
+    letter-spacing: 1px;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+  }
+
+  .cx-pasos {
+    list-style: none;
+  }
+
+  .cx-pasos li {
+    font-size: 12px;
+    color: var(--gris-texto);
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+  }
+
+  .cx-pasos li:last-child { border-bottom: none; }
+
+  .cx-step-num {
+    background: var(--naranja);
+    color: var(--blanco);
+    font-size: 10px;
+    font-weight: 700;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  /* ── PRINCIPIOS ── */
+  .principios-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    margin-top: 48px;
+  }
+
+  .principio {
+    padding: 32px 28px;
+    background: var(--gris-claro);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .principio::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: var(--naranja);
+    transition: width 0.4s;
+  }
+
+  .principio-icon {
+    font-size: 32px;
+    margin-bottom: 16px;
+  }
+
+  .principio-titulo {
+    font-size: 14px;
+    font-weight: 800;
+    color: var(--negro);
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+  }
+
+  .principio-desc {
+    font-size: 12px;
+    color: var(--gris-texto);
+    line-height: 1.65;
+  }
+
+  /* ── CLOSING ── */
+  .closing {
+    background: var(--negro);
+    text-align: center;
+    padding: 100px 64px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .closing::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 50% 100%, rgba(207,115,27,0.2) 0%, transparent 60%);
+  }
+
+  .closing-tag {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 5px;
+    color: var(--naranja);
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    position: relative;
+  }
+
+  .closing-h2 {
+    font-size: 48px;
+    font-weight: 900;
+    color: var(--blanco);
+    line-height: 1.1;
+    margin-bottom: 24px;
+    position: relative;
+  }
+
+  .closing-h2 span { color: var(--naranja); }
+
+  .closing-sub {
+    font-size: 16px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.5);
+    max-width: 500px;
+    margin: 0 auto 48px;
+    position: relative;
+  }
+
+  .closing-datos {
+    display: flex;
+    justify-content: center;
+    gap: 64px;
+    position: relative;
+  }
+
+  .closing-dato {
+    text-align: center;
+  }
+
+  .closing-dato-num {
+    font-size: 36px;
+    font-weight: 900;
+    color: var(--naranja);
+  }
+
+  .closing-dato-label {
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: rgba(255,255,255,0.3);
+    text-transform: uppercase;
+    margin-top: 4px;
+  }
+
+  /* ── PRINT ── */
+  @media print {
+    .portada { min-height: 100vh; page-break-after: always; }
+    body { font-size: 12px; }
+  }
+
+  /* ── SMOOTH SCROLL ── */
+  html { scroll-behavior: smooth; scroll-padding-top: 68px; }
+
+  /* ── NAV STICKY ── */
+  .nav-sticky {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+    background: rgba(10,10,10,0.94);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(207,115,27,0.25);
+    transition: box-shadow 0.3s;
+  }
+  .nav-sticky.scrolled {
+    box-shadow: 0 4px 32px rgba(0,0,0,0.45);
+  }
+  .nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+  }
+  .nav-logo img {
+    height: 34px;
+    display: block;
+    filter: brightness(1.05);
+  }
+  .nav-links {
+    display: flex;
+    gap: 28px;
+    align-items: center;
+  }
+  .nav-links a {
+    color: rgba(255,255,255,0.55);
+    text-decoration: none;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: color 0.2s;
+    position: relative;
+    padding-bottom: 4px;
+  }
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 0; height: 2px;
+    background: var(--naranja);
+    transition: width 0.3s ease;
+  }
+  .nav-links a:hover,
+  .nav-links a.active { color: var(--naranja); }
+  .nav-links a:hover::after,
+  .nav-links a.active::after { width: 100%; }
+  .nav-progress {
+    position: absolute;
+    bottom: -1px; left: 0;
+    height: 2px;
+    background: var(--naranja);
+    width: 0%;
+    transition: width 0.1s linear;
+    opacity: 0.8;
+  }
+
+  /* ── SECTION SCROLL MARGIN ── */
+  #proposito, #bienvenida, #equipo, #plan, #gamificacion, #proceso, #protocolo, #principios, #cierre {
+    scroll-margin-top: 64px;
+  }
+
+  /* ── UPGRADE: HOVER EFFECTS & SHADOWS ── */
+  .kit-item {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .kit-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 28px rgba(0,0,0,0.12);
+  }
+  .cx-card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .cx-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 36px rgba(0,0,0,0.10);
+  }
+  .valor-card {
+    transition: background 0.25s ease;
+  }
+  .valor-card:hover {
+    background: rgba(255,255,255,0.07);
+  }
+  .org-node {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border-radius: 2px;
+  }
+  .org-node:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+  }
+  .principio:hover {
+    box-shadow: 0 8px 28px rgba(0,0,0,0.08);
+    transform: translateY(-2px);
+    transition: all 0.25s ease;
+  }
+  .mes-card:hover {
+    background: rgba(0,0,0,0.02);
+    transition: background 0.2s ease;
+  }
+
+  /* ── UPGRADE: SECTION HEADERS ── */
+  .titulo-seccion {
+    letter-spacing: -0.5px;
+  }
+  .tag {
+    background: rgba(207,115,27,0.1);
+    border: 1px solid rgba(207,115,27,0.3);
+    padding: 4px 14px;
+    border-radius: 20px;
+    display: inline-block;
+  }
+
+  /* ── BACK TO TOP ── */
+  .back-top {
+    position: fixed;
+    bottom: 32px; right: 32px;
+    width: 44px; height: 44px;
+    background: var(--naranja);
+    color: var(--blanco);
+    border: none;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px;
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 999;
+    border-radius: 2px;
+    box-shadow: 0 4px 16px rgba(207,115,27,0.4);
+  }
+  .back-top.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @media (max-width: 900px) {
+    .nav-links { display: none; }
+    .nav-inner { padding: 0 24px; }
+  }
+
+</style>
+</head>
+<body>
+
+<!-- ━━━━━━━━━━━━━━━━ NAVEGACIÓN STICKY ━━━━━━━━━━━━━━━━ -->
+<nav class="nav-sticky" id="main-nav">
+  <div class="nav-inner">
+    <div class="nav-logo">
+      <a href="#portada"><img src="PNGs/RKPALANCA-horiz-Blanco.png" alt="RK Palanca Fontestad"></a>
+    </div>
+    <div class="nav-links">
+      <a href="#proposito">Propósito</a>
+      <a href="#bienvenida">Bienvenida</a>
+      <a href="#equipo">Equipo</a>
+      <a href="#plan">Plan 3 Meses</a>
+      <a href="#gamificacion">Logros</a>
+      <a href="#proceso">Proceso</a>
+      <a href="#protocolo">Protocolo</a>
+      <a href="#principios">Principios</a>
+    </div>
+  </div>
+  <div class="nav-progress" id="nav-progress"></div>
+</nav>
+
+<button class="back-top" id="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+  (function(){
+    var nav = document.getElementById('main-nav');
+    var prog = document.getElementById('nav-progress');
+    var btn = document.getElementById('back-top');
+    var links = document.querySelectorAll('.nav-links a');
+    var sections = [];
+    links.forEach(function(a){ var t=a.getAttribute('href').slice(1); var el=document.getElementById(t); if(el) sections.push({el:el,a:a}); });
+    window.addEventListener('scroll', function(){
+      var sy = window.scrollY;
+      var dh = document.documentElement.scrollHeight - window.innerHeight;
+      prog.style.width = (dh > 0 ? (sy/dh*100) : 0) + '%';
+      if(sy > 80){ nav.classList.add('scrolled'); } else { nav.classList.remove('scrolled'); }
+      if(sy > 400){ btn.classList.add('visible'); } else { btn.classList.remove('visible'); }
+      var cur = '';
+      sections.forEach(function(s){ if(s.el.offsetTop - 80 <= sy) cur = s.a.getAttribute('href'); });
+      links.forEach(function(a){ a.classList.toggle('active', a.getAttribute('href') === cur); });
+    }, {passive:true});
+  })();
+</script>
+
+
+<!-- ━━━━━━━━━━━━━━━━ PORTADA ━━━━━━━━━━━━━━━━ -->
+<div class="portada" id="portada">
+  <div class="portada-logo">
+    <img src="PNGs/RKPALANCA-horiz-Blanco.png" alt="RK Palanca Fontestad" style="height:64px; max-width:320px;">
+  </div>
+
+  <div class="portada-titulo">
+    <div class="portada-bienvenida">Dossier de incorporación · Equipo 2ª Mano</div>
+    <h1 class="portada-h1">Tu nuevo<br><span>punto de partida</span><br>empieza aquí.</h1>
+    <p class="portada-desc">Todo lo que necesitas saber para convertirte en parte del despacho inmobiliario de referencia en L'Horta Nord desde 1976.</p>
+  </div>
+
+  <div class="portada-stats">
+    <div class="stat">
+      <div class="stat-num">+5.025</div>
+      <div class="stat-label">Viviendas vendidas</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">+1.000</div>
+      <div class="stat-label">Reseñas Google</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">4,8★</div>
+      <div class="stat-label">Valoración media</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">1976</div>
+      <div class="stat-label">Año de fundación</div>
+    </div>
+  </div>
+
+  <div class="portada-footer">CONFIDENCIAL · USO INTERNO · RK PALANCA FONTESTAD</div>
+</div>
+
+
+<!-- ━━━━━━━━━━━━━━━━ PROPÓSITO ━━━━━━━━━━━━━━━━ -->
+<div class="proposito" id="proposito">
+  <div class="seccion">
+    <div class="tag">Nuestro Propósito</div>
+    <h2 class="titulo-seccion" style="color:white; font-size:38px;">¿Por qué existimos?</h2>
+    <div class="divider"></div>
+
+    <blockquote class="proposito-quote">
+      "Existimos para dar sentido a uno de los momentos más importantes en la vida de las personas: vender su hogar con tranquilidad, confianza y claridad."
+    </blockquote>
+
+    <p style="color:rgba(255,255,255,0.65); font-size:14px; font-weight:300; max-width:640px; line-height:1.8;">
+      No vendemos casas. Gestionamos <strong style="color:white;">momentos vitales</strong>. Cada vivienda que gestionamos es más que un inmueble: es una historia, un cierre de etapa y una nueva puerta que se abre.<br><br>
+      Somos una empresa familiar que entiende el valor de hacer las cosas bien — una organización que mira al futuro con tecnología, datos y visión. Nuestra misión es transformar un proceso complejo en una <strong style="color:var(--naranja);">experiencia humana, clara y serena</strong>.
+    </p>
+
+    <div class="valores-grid">
+      <div class="valor-card">
+        <div class="valor-num">01</div>
+        <div class="valor-titulo">Cliente en el Centro</div>
+        <div class="valor-desc">Cada punto de contacto crea una reacción emocional. Cuidamos cada detalle.</div>
+      </div>
+      <div class="valor-card">
+        <div class="valor-num">02</div>
+        <div class="valor-titulo">Transparencia</div>
+        <div class="valor-desc">Comunicación abierta e informativa. El cliente siempre se siente acompañado.</div>
+      </div>
+      <div class="valor-card">
+        <div class="valor-num">03</div>
+        <div class="valor-titulo">Tradición + Innovación</div>
+        <div class="valor-desc">50 años de experiencia + herramientas tecnológicas de vanguardia.</div>
+      </div>
+      <div class="valor-card">
+        <div class="valor-num">04</div>
+        <div class="valor-titulo">Compromiso Total</div>
+        <div class="valor-desc">Expertos en constante formación. Cada acción enfocada al éxito del cliente.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ━━━━━━━━━━━━━━━━ KIT DE BIENVENIDA ━━━━━━━━━━━━━━━━ -->
+<div class="seccion" id="bienvenida" style="padding-top:80px; padding-bottom:80px;">
+  <div class="tag">Día 1</div>
+  <h2 class="titulo-seccion">Tu kit de<br><em>bienvenida</em></h2>
+  <div class="divider"></div>
+  <p style="color:var(--gris-texto); max-width:560px; font-size:14px;">Desde el primer momento, el equipo de Marketing prepara todo para que tu incorporación sea un proceso fluido y memorable.</p>
+
+  <div class="kit-grid">
+    <div class="kit-item">
+      <div class="kit-icon">📣</div>
+      <div>
+        <div class="kit-titulo">Presentación en Slack</div>
+        <div class="kit-desc">El equipo de Marketing te presenta en el canal general de Slack con tu foto, puesto y una bienvenida oficial. Tu primera impresión en el equipo, cuidada al detalle.</div>
+      </div>
+    </div>
+    <div class="kit-item">
+      <div class="kit-icon">📋</div>
+      <div>
+        <div class="kit-titulo">Manual de Convivencia</div>
+        <div class="kit-desc">El dossier corporativo: organigrama, horarios, valores, normas de instalaciones y calendario de eventos anuales.</div>
+      </div>
+    </div>
+    <div class="kit-item">
+      <div class="kit-icon">🎓</div>
+      <div>
+        <div class="kit-titulo">Plan de Formación 21 Días</div>
+        <div class="kit-desc">Acceso al Aula Formativa y a la plataforma online. Tu mentor asignado te guiará en cada sesión de entrenamiento.</div>
+      </div>
+    </div>
+    <div class="kit-item">
+      <div class="kit-icon">🎒</div>
+      <div>
+        <div class="kit-titulo">Artículos de Bienvenida</div>
+        <div class="kit-desc">Taza personalizada · Botella reutilizable con tu nombre · Lanyard con tus datos · Libreta y bolígrafo · Mochila para portátil · Teléfono móvil · Portátil de empresa.</div>
+      </div>
+    </div>
+    <div class="kit-item">
+      <div class="kit-icon">🧭</div>
+      <div>
+        <div class="kit-titulo">Tu Mentor Asignado</div>
+        <div class="kit-desc">Te presentará al equipo, te enseñará las instalaciones y será tu referente durante los primeros meses. Una figura clave en tu desarrollo.</div>
+      </div>
+    </div>
+    <div class="kit-item">
+      <div class="kit-icon">🗓️</div>
+      <div>
+        <div class="kit-titulo">Eventos del Año</div>
+        <div class="kit-desc">Comida de verano · Teambuildings · Cena de Navidad · Celebraciones mensuales de cumpleaños. El equipo que celebra junto, crece junto.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ━━━━━━━━━━━━━━━━ ORGANIGRAMA ━━━━━━━━━━━━━━━━ -->
+<div id="equipo" style="background:var(--gris-claro); padding:80px 64px;">
+  <div class="tag">Estructura</div>
+  <h2 class="titulo-seccion">Tu equipo y<br><em>dónde encajas</em></h2>
+  <div class="divider"></div>
+
+  <div class="org-wrapper">
+    <div class="org-container">
+      <!-- Dirección -->
+      <div class="org-level">
+        <div class="org-node highlight" style="min-width:160px;">
+          <div class="org-role">Dirección Comercial</div>
+          <div class="org-name">JAVI</div>
+        </div>
+        <div class="org-node highlight" style="min-width:200px;">
+          <div class="org-role">Dirección Financiera y Marketing</div>
+          <div class="org-name">JOSE MIGUEL</div>
+        </div>
+      </div>
+
+      <div class="org-connector-v"></div>
+
+      <!-- Líderes -->
+      <div class="org-level">
+        <div class="org-node secondary" style="min-width:155px;">
+          <div class="org-role">Generación de Negocio, RRHH</div>
+          <div class="org-name">ALMUDENA</div>
+        </div>
+        <div class="org-node secondary" style="min-width:155px;">
+          <div class="org-role">Dpto. Marketing</div>
+          <div class="org-name">ROBERTO</div>
+        </div>
+                <div class="org-node secondary" style="min-width:155px;">
+          <div class="org-role">Líder Negociación 2ª Mano</div>
+          <div class="org-name">ASUN</div>
+        </div>
+        <div class="org-node secondary" style="min-width:155px;">
+          <div class="org-role">Dpto. Obra Nueva y Alquiler</div>
+          <div class="org-name">ROS</div>
+        </div>
+        <div class="org-node secondary" style="min-width:155px;">
+          <div class="org-role">Dpto. Firmas y Postventa</div>
+          <div class="org-name">MAR · VICKY · MARIVI</div>
+        </div>
+      </div>
+
+      <div class="org-connector-v"></div>
+
+      <!-- Mentores -->
+      <div class="org-level">
+        <div class="org-node light" style="min-width:120px;">
+          <div class="org-role">Atención Cliente</div>
+          <div class="org-name">JULIA</div>
+        </div>
+        <div class="org-node light" style="min-width:120px;">
+          <div class="org-role">Imagen / Prospección</div>
+          <div class="org-name">ANDREA · VERÓNICA</div>
+        </div>
+        <div class="org-node light" style="min-width:120px;">
+          <div class="org-role">Mentores 2ª Mano</div>
+          <div class="org-name">ASUN · MARIA · VIRGI</div>
+        </div>
+      </div>
+
+      <div class="org-connector-v"></div>
+
+      <!-- Agentes + TÚ -->
+      <div class="org-level" style="flex-wrap:wrap; gap:6px; justify-content:center;">
+        <div class="org-node light" style="min-width:130px;"><div class="org-role">Asesor Inmobiliario</div><div class="org-name">ALEJANDRO GARCÍA</div></div>
+        <div class="org-node light" style="min-width:130px;"><div class="org-role">Asesora Inmobiliaria</div><div class="org-name">AMPARO ORTS</div></div>
+        <div class="org-node light" style="min-width:130px;"><div class="org-role">Asesora Inmobiliaria</div><div class="org-name">CLARA ORDÓÑEZ</div></div>
+        <div class="org-node light" style="min-width:130px;"><div class="org-role">Asesora Inmobiliaria</div><div class="org-name">CLAUDIA STELLING</div></div>
+        <div class="org-node light" style="min-width:130px;"><div class="org-role">Asesora Inmobiliaria</div><div class="org-name">DESIRÉE LÓPEZ</div></div>
+        <div class="org-node light" style="min-width:130px;"><div class="org-role">Asesora Inmobiliaria</div><div class="org-name">EVA VALLÉS</div></div>
+        <div class="org-node light" style="min-width:130px;"><div class="org-role">Asesor Inmobiliario</div><div class="org-name">FEDE CARBONELL</div></div>
+        <div class="org-node light" style="min-width:130px;"><div class="org-role">Asesor Inmobiliario</div><div class="org-name">FRAN ESTELLÉS</div></div>
+        <div class="org-node light" style="min-width:130px;"><div class="org-role">Asesor Inmobiliario</div><div class="org-name">JOSE GIMÉNEZ</div></div>
+        <div class="org-node light" style="min-width:130px;"><div class="org-role">Asesora Inmobiliaria</div><div class="org-name">LORENA LULL</div></div>
+        <div class="org-node light" style="min-width:130px;"><div class="org-role">Asesora Inmobiliaria</div><div class="org-name">MAVI CASTILLO</div></div>
+        <div class="org-node light" style="min-width:130px;"><div class="org-role">Asesora Inmobiliaria</div><div class="org-name">NATALIA SANFÉLIX</div></div>
+        <div class="org-node light" style="min-width:130px;"><div class="org-role">Asesora Inmobiliaria</div><div class="org-name">ROSA DOMÉNECH</div></div>
+        <div class="org-node light" style="min-width:130px;"><div class="org-role">Asesora Inmobiliaria</div><div class="org-name">SEFA GALLENT</div></div>
+        <div class="org-node you" style="min-width:130px;"><div class="org-role">Asesor/a Inmobiliario/a</div><div class="org-name">TÚ</div></div>
+      </div>
+    </div>
+  </div>
+
+  <p style="font-size:12px; color:var(--gris-medio); margin-top:24px;">* Organigrama actualizado con los 14 asesores inmobiliarios del equipo de 2ª Mano en activo.</p>
+</div>
+
+
+<!-- ━━━━━━━━━━━━━━━━ PLAN 3 MESES ━━━━━━━━━━━━━━━━ -->
+<div id="plan" style="padding:80px 64px;">
+  <div class="tag">Tu hoja de ruta</div>
+  <h2 class="titulo-seccion">Los primeros<br><em>3 meses</em></h2>
+  <div class="divider"></div>
+  <p style="color:var(--gris-texto); max-width:560px; font-size:14px;">Un plan estructurado para que pases de aprender a generar negocio real. Cada mes tiene objetivos claros y KPIs medibles.</p>
+
+  <div class="meses-grid">
+    <!-- MES 1 -->
+    <div class="mes-card">
+      <div class="mes-num">1</div>
+      <div class="mes-badge">MES 1 · 50% objetivos</div>
+      <div class="mes-titulo">Adaptación y Formación</div>
+      <div class="mes-objetivo">Dominar herramientas, procesos y guiones</div>
+      <ul class="mes-lista">
+        <li>Horus, IA Gestión, Drive, Google Forms</li>
+        <li>Llamadas de prospección y guiones</li>
+        <li>ACM, cálculo de hipoteca y gastos</li>
+        <li>Presentaciones de servicios (rol play)</li>
+        <li>Gestión de compradores: entrevistas y calificación</li>
+        <li>Acompañamientos mín. 1/semana</li>
+      </ul>
+      <div class="kpi-grid">
+        <div class="kpi"><div class="kpi-val">15-20</div><div class="kpi-label">Toques Horus/sem</div></div>
+        <div class="kpi"><div class="kpi-val">15</div><div class="kpi-label">Llamadas respondidas</div></div>
+        <div class="kpi"><div class="kpi-val">2</div><div class="kpi-label">Citas agendadas</div></div>
+        <div class="kpi"><div class="kpi-val">10</div><div class="kpi-label">Demandas activas</div></div>
+      </div>
+    </div>
+
+    <!-- MES 2 -->
+    <div class="mes-card">
+      <div class="mes-num">2</div>
+      <div class="mes-badge">MES 2 · 100% citas y altas</div>
+      <div class="mes-titulo">Activación Comercial</div>
+      <div class="mes-objetivo">Generar negocio real. Captar propiedades.</div>
+      <ul class="mes-lista">
+        <li>Presentaciones de servicios avanzadas</li>
+        <li>Estrategia de zona y RRSS efectiva</li>
+        <li>Gestión de ofertas y documentación</li>
+        <li>Gestión de reservas y postventa</li>
+        <li>2 captaciones con mentor al mes</li>
+        <li>Primeras exclusivas propias</li>
+      </ul>
+      <div class="kpi-grid">
+        <div class="kpi"><div class="kpi-val">30</div><div class="kpi-label">Toques Horus/sem</div></div>
+        <div class="kpi"><div class="kpi-val">25-30</div><div class="kpi-label">Llamadas respondidas</div></div>
+        <div class="kpi"><div class="kpi-val">4</div><div class="kpi-label">Citas agendadas</div></div>
+        <div class="kpi"><div class="kpi-val">20</div><div class="kpi-label">Demandas activas</div></div>
+      </div>
+    </div>
+
+    <!-- MES 3 -->
+    <div class="mes-card">
+      <div class="mes-num">3</div>
+      <div class="mes-badge">MES 3 · Primeros cierres</div>
+      <div class="mes-titulo">Cierre de Operaciones</div>
+      <div class="mes-objetivo">Avanzar hacia cierres. Gestión completa.</div>
+      <ul class="mes-lista">
+        <li>Formación Win-Win avanzada</li>
+        <li>Redes Sociales y farming de zona</li>
+        <li>Identificar compradores activos</li>
+        <li>Estrategias de bajada de precio</li>
+        <li>Seguimiento postvisita</li>
+        <li>1 relación win-win/semana con profesionales</li>
+      </ul>
+      <div class="kpi-grid">
+        <div class="kpi"><div class="kpi-val">40</div><div class="kpi-label">Toques Horus/sem</div></div>
+        <div class="kpi"><div class="kpi-val">30+</div><div class="kpi-label">Llamadas respondidas</div></div>
+        <div class="kpi"><div class="kpi-val">1-2</div><div class="kpi-label">Altas de viviendas</div></div>
+        <div class="kpi"><div class="kpi-val">1</div><div class="kpi-label">Oferta/Cierre</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ━━━━━━━━━━━━━━━━ GAMIFICACIÓN ━━━━━━━━━━━━━━━━ -->
+<div id="gamificacion" style="background:var(--negro); padding:80px 64px;">
+  <div class="tag">Tu carrera profesional</div>
+  <h2 class="titulo-seccion" style="color:white;">El Juego del Éxito RK:<br><em>Tu ruta de crecimiento</em></h2>
+  <div class="divider"></div>
+  <p style="color:rgba(255,255,255,0.5); max-width:560px; font-size:14px; margin-bottom:0;">Un sistema de progresión profesional gamificado. Cada nivel desbloquea nuevos recursos, leads y reconocimiento. El talento se demuestra — nunca se asume.</p>
+
+  <div class="niveles-stack">
+
+    <div class="nivel nivel-1">
+      <div class="nivel-badge">
+        <div class="nivel-label">Nivel 1</div>
+        <div class="nivel-nombre">El Escudero<br>+ La Caja Negra</div>
+        <div style="font-size:10px; color:rgba(255,255,255,0.4); margin-top:8px;">Días 1-30</div>
+      </div>
+      <div class="nivel-contenido">
+        <div class="nivel-mision">Prueba de Actitud + Aula Formativa</div>
+        <div class="nivel-desc">Primero demuestras tu hambre, puntualidad y resiliencia con 5 Gemas de Actitud. A continuación, superas 6 Gemas de Competencia en roleplay con nota ≥ 9/10. Hasta que no apruebes, no sales a captar.</div>
+        <div class="nivel-gemas">
+          <span class="gema">💎 Resiliencia — 100 llamadas</span>
+          <span class="gema">💎 Consecución — 30 citas</span>
+          <span class="gema">💎 Sombra — 10 visitas senior</span>
+          <span class="gema">💎 Orden — 100 compradores en Horus</span>
+          <span class="gema">💎 Formación regulada FP</span>
+          <span class="gema">💎 Prospección de Hierro</span>
+          <span class="gema">💎 Cierre — Cita Captación</span>
+          <span class="gema">💎 Cazador — Visita Comprador</span>
+          <span class="gema">💎 Influencia — Win-Win</span>
+          <span class="gema">💎 Guardián — Gestión y Contratos</span>
+        </div>
+      </div>
+      <div class="nivel-reward">
+        <div class="reward-label">🏆 Recompensa</div>
+        <div class="reward-text">Insignia "Graduado Escuela Palanca Fontestad" + Tarjetas de visita + Permiso de captación.</div>
+      </div>
+    </div>
+
+    <div class="nivel nivel-2">
+      <div class="nivel-badge">
+        <div class="nivel-label">Nivel 2</div>
+        <div class="nivel-nombre">Consultor Junior</div>
+        <div style="font-size:10px; color:rgba(207,115,27,0.7); margin-top:8px;">El Despegue</div>
+      </div>
+      <div class="nivel-contenido">
+        <div class="nivel-mision">🎯 Misión: 40.000€ facturación · Mínimo 4 captaciones propias vendidas</div>
+        <div class="nivel-desc">Ya estás en la calle. Ahora demuestra que tu formación se traduce en euros. Cierras tus primeras operaciones propias.</div>
+      </div>
+      <div class="nivel-reward">
+        <div class="reward-label">🏆 Recompensa</div>
+        <div class="reward-text">Acceso al "Grifo" de Verónica: citas de prospección cualificadas sin depender 100% de tu puerta fría.</div>
+      </div>
+    </div>
+
+    <div class="nivel nivel-3">
+      <div class="nivel-badge">
+        <div class="nivel-label">Nivel 3</div>
+        <div class="nivel-nombre">Consultor Senior</div>
+        <div style="font-size:10px; color:rgba(207,115,27,0.8); margin-top:8px;">La Consolidación</div>
+      </div>
+      <div class="nivel-contenido">
+        <div class="nivel-mision">🎯 Misión: Replicar el éxito. Otro semestre de 40.000€ y 4 captaciones vendidas.</div>
+        <div class="nivel-desc">Un golpe de suerte lo tiene cualquiera. El Seniority exige consistencia. Demuestras que no fue un accidente.</div>
+      </div>
+      <div class="nivel-reward">
+        <div class="reward-label">🏆 Recompensa</div>
+        <div class="reward-text">Acceso a Leads Inbound (M2 y M3). Las citas de captación que entran por la puerta de la oficina.</div>
+      </div>
+    </div>
+
+    <div class="nivel nivel-4">
+      <div class="nivel-badge" style="background:var(--naranja);">
+        <div class="nivel-label" style="color:var(--negro);">Nivel 4</div>
+        <div class="nivel-nombre" style="color:var(--negro);">TOP PRODUCER RK</div>
+        <div style="font-size:10px; color:rgba(0,0,0,0.5); margin-top:8px;">La Élite</div>
+      </div>
+      <div class="nivel-contenido">
+        <div class="nivel-mision">🎯 Misión Anual: 12 captaciones propias vendidas en el año</div>
+        <div class="nivel-desc">El olimpo de Palanca Fontestad. Agentes que sostienen la rentabilidad de la empresa y representan la marca al más alto nivel.</div>
+      </div>
+      <div class="nivel-reward">
+        <div class="reward-label">🏆 Recompensa</div>
+        <div class="reward-text">Leads VIP de Gerencia + Avatar corporativo personalizado + Protagonismo en revista Real Home + Campañas de marca personal.</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ━━━━━━━━━━━━━━━━ PROCESO DE VENTA ━━━━━━━━━━━━━━━━ -->
+<div class="proceso-fondo" id="proceso" style="padding:80px 64px;">
+  <div class="tag" style="color:var(--naranja);">El proceso</div>
+  <h2 class="titulo-seccion" style="color:white;">De la captación<br><em>a la escritura</em></h2>
+  <div class="divider"></div>
+  <p style="color:rgba(255,255,255,0.5); max-width:560px; font-size:14px;">Conocer cada fase del proceso es esencial. Aquí verás quién hace qué — y cuál es tu protagonismo como Agente Comercial.</p>
+
+  <div class="fases-grid">
+    <div class="fase">
+      <div class="fase-num">01</div>
+      <div class="fase-icon">🔍</div>
+      <div class="fase-titulo">Captación</div>
+      <ul class="fase-items">
+        <li>Prospección de propietarios</li>
+        <li>Primera visita al inmueble</li>
+        <li>Valoración CMA</li>
+        <li>Presentación de servicios</li>
+        <li>Firma del contrato</li>
+        <li>Recogida documentación</li>
+      </ul>
+      <div class="fase-tu">
+        <div class="fase-tu-label">👤 Tu rol</div>
+        <div class="fase-tu-text">Protagonista. Con apoyo de tu Mentor en las primeras captaciones.</div>
+      </div>
+    </div>
+
+    <div class="fase">
+      <div class="fase-num">02</div>
+      <div class="fase-icon">📸</div>
+      <div class="fase-titulo">Preparación</div>
+      <ul class="fase-items">
+        <li>Home Staging</li>
+        <li>Reportaje fotográfico</li>
+        <li>Tour virtual</li>
+        <li>Publicación en portales</li>
+        <li>Redes sociales y web</li>
+        <li>Colaboraciones MLS</li>
+      </ul>
+      <div class="fase-tu">
+        <div class="fase-tu-label">👤 Tu rol</div>
+        <div class="fase-tu-text">Redactas los textos de alto impacto. El administrativo gestiona la publicación.</div>
+      </div>
+    </div>
+
+    <div class="fase">
+      <div class="fase-num">03</div>
+      <div class="fase-icon">🤝</div>
+      <div class="fase-titulo">Comercialización</div>
+      <ul class="fase-items">
+        <li>Cualificación compradores</li>
+        <li>Organización de visitas</li>
+        <li>Seguimiento post-visita</li>
+        <li>Negociación de ofertas</li>
+        <li>Asesoramiento al cliente</li>
+        <li>Firma de reserva</li>
+      </ul>
+      <div class="fase-tu">
+        <div class="fase-tu-label">👤 Tu rol</div>
+        <div class="fase-tu-text">Responsable total. Solo puedes contactar a TU cliente, no al propietario ajeno.</div>
+      </div>
+    </div>
+
+    <div class="fase">
+      <div class="fase-num">04</div>
+      <div class="fase-icon">✍️</div>
+      <div class="fase-titulo">Arras</div>
+      <ul class="fase-items">
+        <li>Preparación contrato (MAR)</li>
+        <li>Revisión legal cláusulas</li>
+        <li>Gestión de la señal</li>
+        <li>Cancelación de cargas</li>
+        <li>Firma del contrato</li>
+      </ul>
+      <div class="fase-tu">
+        <div class="fase-tu-label">👤 Tu rol</div>
+        <div class="fase-tu-text">Firmas el contrato de arras con el cliente. El administrativo gestiona la documentación.</div>
+      </div>
+    </div>
+
+    <div class="fase">
+      <div class="fase-num">05</div>
+      <div class="fase-icon">🏛️</div>
+      <div class="fase-titulo">Notaría</div>
+      <ul class="fase-items">
+        <li>Coordinación notaría (VICKY)</li>
+        <li>Revisión de la minuta</li>
+        <li>Medios de pago</li>
+        <li>Registro e impuestos</li>
+        <li>Acompañamiento firma</li>
+        <li>Entrega de llaves + Reseña</li>
+      </ul>
+      <div class="fase-tu">
+        <div class="fase-tu-label">👤 Tu rol</div>
+        <div class="fase-tu-text">Acompañas a notaría, haces la entrega de llaves y solicitas la reseña del cliente.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ━━━━━━━━━━━━━━━━ PROTOCOLO CX ━━━━━━━━━━━━━━━━ -->
+<div class="cx-fondo" id="protocolo" style="padding:80px 64px;">
+  <div class="tag">Atención al Cliente</div>
+  <h2 class="titulo-seccion">Experiencia de cliente:<br><em>el protocolo RK</em></h2>
+  <div class="divider"></div>
+  <p style="color:var(--gris-texto); max-width:560px; font-size:14px;">Cada punto de contacto crea una reacción emocional. Este protocolo garantiza una experiencia consistente, profesional y memorable en todas nuestras oficinas.</p>
+
+  <div class="fases-cx">
+    <div class="cx-card">
+      <div class="cx-card-num">I</div>
+      <div class="cx-card-titulo">La Bienvenida</div>
+      <div class="cx-card-sub">La primera impresión</div>
+      <ul class="cx-pasos">
+        <li><span class="cx-step-num">1</span>Contacto visual + sonrisa en los primeros 10 segundos</li>
+        <li><span class="cx-step-num">2</span>Saludo: "Buenos días/tardes, bienvenido/a a RK Palanca Fontestad, ¿en qué puedo ayudarle?" (tratamiento de usted)</li>
+        <li><span class="cx-step-num">3</span>Identificar si tiene cita → localizar al agente</li>
+        <li><span class="cx-step-num">4</span>Acompañar personalmente a la zona de espera (nunca señalar)</li>
+        <li><span class="cx-step-num">5</span>Ofrecer bebida siempre: café, té o agua</li>
+      </ul>
+    </div>
+
+    <div class="cx-card">
+      <div class="cx-card-num">II</div>
+      <div class="cx-card-titulo">Gestión Telefónica</div>
+      <div class="cx-card-sub">Cliente entra mientras estás al teléfono</div>
+      <ul class="cx-pasos">
+        <li><span class="cx-step-num">1</span>Contacto visual + sonrisa + gesto de "un momento" (dedo índice)</li>
+        <li><span class="cx-step-num">2</span>Opción A: Concluir la llamada en 15-20 segundos</li>
+        <li><span class="cx-step-num">3</span>Opción B: Pedir que espere cortésmente al interlocutor</li>
+        <li><span class="cx-step-num">4</span>"Disculpe la espera, muchas gracias por su paciencia. ¿En qué puedo ayudarle?"</li>
+        <li><span class="cx-step-num">5</span>Retomar la llamada: "Muchas gracias por su espera..."</li>
+      </ul>
+    </div>
+
+    <div class="cx-card">
+      <div class="cx-card-num">III</div>
+      <div class="cx-card-titulo">Zona de Espera</div>
+      <div class="cx-card-sub">Diferenciación sensorial</div>
+      <ul class="cx-pasos">
+        <li><span class="cx-step-num">1</span>Ambiente impecable: música suave, aroma corporativo, revistas de alta gama</li>
+        <li><span class="cx-step-num">2</span>WiFi visible y de fácil acceso para el cliente</li>
+        <li><span class="cx-step-num">3</span>Si hay demora +5 min: informar y disculparse</li>
+        <li><span class="cx-step-num">4</span>Ofrecer valor mientras espera: "Le adelanto este informe de mercado..."</li>
+        <li><span class="cx-step-num">5</span>Recoger feedback: QR o encuesta breve al finalizar</li>
+      </ul>
+    </div>
+
+    <div class="cx-card">
+      <div class="cx-card-num">IV</div>
+      <div class="cx-card-titulo">Sala de Firmas</div>
+      <div class="cx-card-sub">El momento de la verdad</div>
+      <ul class="cx-pasos">
+        <li><span class="cx-step-num">1</span>Sala impecable: transmite seguridad, seriedad y celebración</li>
+        <li><span class="cx-step-num">2</span>Documentación, bolígrafos de calidad y calculadora preparados</li>
+        <li><span class="cx-step-num">3</span>Puerta cerrada. No interrumpir bajo ningún concepto</li>
+        <li><span class="cx-step-num">4</span>"Momento WOW": detalle de celebración al cerrar la firma</li>
+        <li><span class="cx-step-num">5</span>Acompañar al cliente a la salida + agradecimiento orientado al futuro</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+<!-- ━━━━━━━━━━━━━━━━ PRINCIPIOS GENERALES ━━━━━━━━━━━━━━━━ -->
+<div id="principios" style="padding:80px 64px; max-width:960px; margin:0 auto;">
+  <div class="tag">Cómo trabajamos</div>
+  <h2 class="titulo-seccion">Los principios<br><em>que nos guían</em></h2>
+  <div class="divider"></div>
+
+  <div class="principios-grid">
+    <div class="principio">
+      <div class="principio-icon">🤝</div>
+      <div class="principio-titulo">Profesionalidad</div>
+      <div class="principio-desc">Actitud cortés, proactiva y resolutiva en todo momento. Anticipamos las necesidades no expresadas del cliente.</div>
+    </div>
+    <div class="principio">
+      <div class="principio-icon">🔒</div>
+      <div class="principio-titulo">Confidencialidad</div>
+      <div class="principio-desc">La información de los clientes es estrictamente confidencial. Las conversaciones delicadas ocurren en espacios privados.</div>
+    </div>
+    <div class="principio">
+      <div class="principio-icon">✨</div>
+      <div class="principio-titulo">Orden y Limpieza</div>
+      <div class="principio-desc">Cada empleado mantiene su espacio y las zonas comunes en perfecto estado. Refleja nuestra imagen de marca.</div>
+    </div>
+    <div class="principio">
+      <div class="principio-icon">👔</div>
+      <div class="principio-titulo">Imagen Corporativa</div>
+      <div class="principio-desc">Respetamos el código de vestimenta. La imagen transmitida es uniforme en todos los puntos de contacto.</div>
+    </div>
+    <div class="principio">
+      <div class="principio-icon">📊</div>
+      <div class="principio-titulo">Medición y Mejora</div>
+      <div class="principio-desc">Contribuimos a la recogida de feedback en los Momentos de la Verdad para la mejora continua de la experiencia.</div>
+    </div>
+    <div class="principio">
+      <div class="principio-icon">🌱</div>
+      <div class="principio-titulo">Alineación</div>
+      <div class="principio-desc">La experiencia del empleado está directamente ligada a la del cliente. Participamos activamente en la mejora continua.</div>
+    </div>
+  </div>
+
+  <!-- Espacios de trabajo -->
+  <div style="margin-top:64px;">
+    <h3 style="font-size:20px; font-weight:800; color:var(--negro); margin-bottom:24px;">Normas de las instalaciones</h3>
+    <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap:16px;">
+      <div style="padding:20px; border:1px solid rgba(0,0,0,0.08);">
+        <div style="font-size:18px; margin-bottom:8px;">📍</div>
+        <div style="font-size:13px; font-weight:700; margin-bottom:4px;">Recepción</div>
+        <div style="font-size:11px; color:var(--gris-texto);">Solo para bienvenida y llamadas. Sin reuniones improvisadas. Mostrador siempre despejado.</div>
+      </div>
+      <div style="padding:20px; border:1px solid rgba(0,0,0,0.08);">
+        <div style="font-size:18px; margin-bottom:8px;">🪑</div>
+        <div style="font-size:13px; font-weight:700; margin-bottom:4px;">Mesas Altas</div>
+        <div style="font-size:11px; color:var(--gris-texto);">Para interacciones rápidas. Máx. 15-20 min. Dejar siempre despejadas tras su uso.</div>
+      </div>
+      <div style="padding:20px; border:1px solid rgba(0,0,0,0.08);">
+        <div style="font-size:18px; margin-bottom:8px;">🚪</div>
+        <div style="font-size:13px; font-weight:700; margin-bottom:4px;">Salas de Reunión</div>
+        <div style="font-size:11px; color:var(--gris-texto);">Reservar previamente. Probar audiovisual antes. Borrar pizarras al terminar.</div>
+      </div>
+      <div style="padding:20px; border:1px solid rgba(0,0,0,0.08);">
+        <div style="font-size:18px; margin-bottom:8px;">💼</div>
+        <div style="font-size:13px; font-weight:700; margin-bottom:4px;">Coworking</div>
+        <div style="font-size:11px; color:var(--gris-texto);">Silencio tipo biblioteca. Conversaciones breves y en proximidad. Mesa limpia al final del día.</div>
+      </div>
+      <div style="padding:20px; border:1px solid rgba(0,0,0,0.08);">
+        <div style="font-size:18px; margin-bottom:8px;">📞</div>
+        <div style="font-size:13px; font-weight:700; margin-bottom:4px;">Sala de Llamadas</div>
+        <div style="font-size:11px; color:var(--gris-texto);">Para llamadas largas o confidenciales. Máx. 45 min. Dejar libre y ordenada.</div>
+      </div>
+      <div style="padding:20px; border:1px solid rgba(0,0,0,0.08);">
+        <div style="font-size:18px; margin-bottom:8px;">🍽️</div>
+        <div style="font-size:13px; font-weight:700; margin-bottom:4px;">Cocina / Office</div>
+        <div style="font-size:11px; color:var(--gris-texto);">Solo para el equipo. Limpiar siempre lo que usas. Zona estrictamente prohibida para clientes.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ━━━━━━━━━━━━━━━━ CLOSING ━━━━━━━━━━━━━━━━ -->
+<div class="closing" id="cierre">
+  <div class="closing-tag">Con respeto · Con rigor · Con corazón</div>
+  <h2 class="closing-h2">Bienvenido/a<br>a la <span>familia RK</span></h2>
+  <p class="closing-sub">Ahora formas parte de un equipo que ha acompañado a más de 10.000 familias de L'Horta Nord a dar el paso más importante de su vida. Es un honor — y una responsabilidad.</p>
+
+  <div class="closing-datos">
+    <div class="closing-dato">
+      <div class="closing-dato-num">+5.025</div>
+      <div class="closing-dato-label">Viviendas vendidas</div>
+    </div>
+    <div class="closing-dato">
+      <div class="closing-dato-num">1976</div>
+      <div class="closing-dato-label">Año fundación</div>
+    </div>
+    <div class="closing-dato">
+      <div class="closing-dato-num">4,8★</div>
+      <div class="closing-dato-label">Valoración Google</div>
+    </div>
+    <div class="closing-dato">
+      <div class="closing-dato-num">3ª</div>
+      <div class="closing-dato-label">Generación familiar</div>
+    </div>
+  </div>
+
+  <div style="margin-top:64px; border-top:1px solid rgba(255,255,255,0.08); padding-top:32px; display:flex; justify-content:space-between; align-items:center;">
+    <div style="text-align:left;">
+      <img src="PNGs/RKPALANCA-horiz-Blanco.png" alt="RK Palanca Fontestad" style="height:64px; max-width:320px;">
+    </div>
+    <div style="font-size:11px; color:rgba(255,255,255,0.2);">Dossier Incorporación · Equipo 2ª Mano · Uso interno</div>
+  </div>
+</div>
+
+</body>
+</html>
